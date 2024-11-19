@@ -79,3 +79,12 @@
   .ticket-card p {
     font-size: 12px; /* Adjust description font size */
   }
+  .filled-circle {
+    display: inline-block; /* Ensures it's treated as an inline element */
+    width: 8px; /* Adjust the size as needed */
+    height: 8px; /* Matches width for a perfect circle */
+    background-color: grey; /* Adjust to your desired color */
+    border-radius: 50%; /* Makes it circular */
+    margin-right: 5px; /* Adds some spacing between the circle and the tag text */
+  }
+  
