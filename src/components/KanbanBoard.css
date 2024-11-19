@@ -1,0 +1,76 @@
+.kanban-board {
+    display: flex; /* Keep all sections in one row */
+    gap: 12px; /* Reduce the spacing between sections */
+    padding: 16px;
+    flex-wrap: wrap; /* Allow wrapping to a new line when necessary */
+    justify-content: space-between; /* Distribute sections evenly */
+    justify-content: flex-start; /* Align sections to the left */
+    
+  }
+  
+  .ticket-group {
+    flex: 1 1 calc(20% - 16px); /* Adjust width calculation for 5 equal sections */
+    min-width: 200px; /* Ensure minimum width for small screens */
+    max-width: 300px; /* Limit maximum width */
+  }
+  
+  .group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    color: #373737;
+  }
+  
+  .group-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .group-header h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .ticket-count {
+    color: #8d8d8d;
+    font-size: 14px;
+  }
+  
+  .group-header-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #8d8d8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-button:hover {
+    color: #373737;
+  }
+  
+
+  .tickets-container {
+    padding: 8px;
+
+    overflow-y: auto; /* Allow vertical scrolling for tickets, if needed */
+  }
+
+  .priority-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  

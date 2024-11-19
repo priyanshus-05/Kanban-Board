@@ -1,0 +1,81 @@
+.display-menu {
+    position: relative;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background: white;
+  }
+  
+  .display-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: #f4f5f8;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #373737;
+  }
+  
+  .display-button:hover {
+    background: #e9ecef;
+  }
+  
+  .menu-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 24px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px; /* Reduced padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make items horizontal */
+    flex-direction: column; /* Align items horizontally */
+    gap: 12px; /* Add spacing between items */
+    min-width: auto; /* Remove fixed width */
+    z-index: 1000;
+}
+
+.menu-item {
+    display: flex; /* Enable horizontal alignment */
+    align-items: center; /* Vertically align dropdown with label */
+    gap: 60px; /* Add spacing between the label and dropdown */
+    margin-bottom: 8px; /* Keep some vertical spacing between items */
+}
+
+  
+  .menu-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .menu-item label {
+    display: block;
+    margin-bottom: 4px; /* Reduced spacing */
+    color: #8d8d8d;
+    font-size: 12px; /* Adjusted font size */
+    text-align: center; /* Center text */
+}
+
+.menu-item select {
+    width: 100%; /* Keep the dropdown responsive */
+    padding: 4px 8px; /* Reduced padding */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px; /* Adjusted font size */
+    color: #373737;
+    background: white;
+    cursor: pointer;
+}
+  
+  .menu-item select:focus {
+    outline: none;
+    border-color: #1a73e8;
+  }
+  .menu-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  
