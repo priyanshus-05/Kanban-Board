@@ -73,4 +73,14 @@
     margin-right: 8px;
     vertical-align: middle;
   }
+
+  .user-avatar-icon,
+.status-icon,
+.priority-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
   

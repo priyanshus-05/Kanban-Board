@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import './DisplayMenu.css';
 import Display from '../assests/Display.svg';
-// interface Props {
-//   displayState: DisplayState;
-//   setDisplayState: (state: DisplayState) => void;
-// }
 
 const groupingOptions = [
   { value: 'status', label: 'Status' },
   { value: 'user', label: 'User' },
-  { value: 'priority', label: 'Priority' }
+  { value: 'priority', label: 'Priority' },
 ];
 
 const orderingOptions = [
   { value: 'priority', label: 'Priority' },
-  { value: 'title', label: 'Title' }
+  { value: 'title', label: 'Title' },
 ];
 
 export function DisplayMenu({ displayState, setDisplayState }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleChange = (type, value) => {
+    setDisplayState({
+      ...displayState,
+      [type]: value,
+    });
+    setIsOpen(false); // Close the menu after selection
+  };
 
   return (
     <div className="display-menu">
@@ -36,16 +40,13 @@ export function DisplayMenu({ displayState, setDisplayState }) {
             <label>Grouping</label>
             <select
               value={displayState.grouping}
-              onChange={(e) =>
-                setDisplayState({
-                  ...displayState,
-                  grouping: e.target.value,
-                })
-              }
+              onChange={(e) => handleChange('grouping', e.target.value)}
             >
-              <option value="status">Status</option>
-              <option value="user">User</option>
-              <option value="priority">Priority</option>
+              {groupingOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </div>
           {/* Ordering Menu */}
@@ -53,15 +54,13 @@ export function DisplayMenu({ displayState, setDisplayState }) {
             <label>Ordering</label>
             <select
               value={displayState.ordering}
-              onChange={(e) =>
-                setDisplayState({
-                  ...displayState,
-                  ordering: e.target.value,
-                })
-              }
+              onChange={(e) => handleChange('ordering', e.target.value)}
             >
-              <option value="priority">Priority</option>
-              <option value="title">Title</option>
+              {orderingOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </div>
         </div>
